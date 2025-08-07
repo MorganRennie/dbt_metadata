@@ -1,3 +1,4 @@
+-- less clunky version of "access_run_results", does not create table, does not have error checking on to_json inputs. 
 {% macro log_run_results_to_table(results) %}
     {% set first_model = results | selectattr("node.resource_type", "equalto", "model") | list | first %}
     {% set log_table = first_model.node.database ~ '.' ~ first_model.node.schema ~ '.dbt_run_logs' %}
