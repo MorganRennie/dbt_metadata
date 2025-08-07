@@ -18,7 +18,7 @@ for line in lines:
     # After description line, add tags
     if stripped.startswith("description:") and current_name:
         indent = ' ' * (len(line) - len(line.lstrip()))
-        output_lines.append(f"{indent}tags:['{current_name}']\n")
+        output_lines.append(f"{indent}tags: ['{current_name}']\n")
         current_name = None  # Reset after use
 
 # Write to output file
